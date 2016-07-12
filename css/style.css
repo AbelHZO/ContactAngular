@@ -1,0 +1,87 @@
+/**	
+	Abel HZO 2016
+	CSS for form contact and table.
+*/
+
+* {
+	font-family: verdana;
+}
+
+form {
+	width: 300px;
+	margin: auto;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+	display: block;
+	width: 100%;
+	padding: 6px;
+	border: 1px solid rgba(0, 0, 0, .5);	
+	margin: 0 auto 20px auto;
+	border-radius: 5px;
+}	
+
+input[type="submit"] {
+	padding: 6px;
+	margin: auto;
+	display: block;
+	width: 80px;
+	background: rgba(0, 250, 10, .3);
+	border: 2px solid rgba(0, 250, 10, 1);
+	font-weight: bold;
+	cursor: pointer;
+	transition: all .5s;
+}
+
+input[type="submit"]:hover {
+	background: rgba(0, 250, 100, 1);
+}
+
+.table {
+	display: table;
+	table-layout: fixed;
+	width: 80%;
+	margin: 20px auto;
+}
+
+.table > div {
+	display: table-row;
+}
+
+.table > div:nth-child(odd) {
+	background: rgba(0, 200, 10, .1);
+}
+
+.table > div:nth-child(even) {
+	background: rgba(10, 100, 100, .1);
+}
+
+.table > div > div {
+	display: table-cell;
+	vertical-align: middle;
+	padding: 8px;
+}
+
+input.ng-invalid.ng-dirty,
+textarea.ng-invalid.ng-dirty {
+	border: 2px solid rgba(255, 0, 0, 1);
+}
+
+span {
+	position: relative;
+	top: -18px;
+	width: 100%;
+	background: rgba(255, 0, 0, .2);
+	padding: 5px;
+	border-radius: 5px;
+	display: block;
+	border: 1px solid red;
+}
+
+.foot {
+	width: 80%;
+	margin: auto;
+	text-align: center;
+}

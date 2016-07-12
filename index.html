@@ -1,0 +1,56 @@
+<!--
+	Abel HZO 2016
+	HTML Form Contact 
+	This code build a form contact
+ -->
+<!DOCTYPE html>
+<html lang="es" ng-app="contact">
+	<head>
+		<title>Form Contact</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+		<script type="text/javascript" src="js/script.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+	<body ng-controller="myControl">
+
+		<header>
+		</header>
+
+		<section>
+			<form name="frm" ng-submit="add();">
+				<h2>Form Contact</h2>
+				<input type="text" name="user" ng-model="contact.user" placeholder="user" ng-pattern="onlyWords" required />
+				<span ng-show="frm.user.$dirty && frm.user.$error.required">Campo Requerido!!!</span>
+				<span ng-show="frm.user.$dirty && frm.user.$error.pattern">Solo letras sin espacios :(</span>
+				<input type="email" name="email" ng-model="contact.email" placeholder="email" required />
+				<span ng-show="frm.email.$dirty && frm.email.$error.required">Campo Requerido!!!</span>
+				<span ng-show="frm.email.$dirty && frm.email.$error.email">Email Invalido!!!</span>
+				<input type="text" name="subject" ng-model="contact.subject" placeholder="subject" ng-maxlength="20" ng-pattern="wordAndNumber" required />
+				<span ng-show="frm.subject.$dirty && frm.subject.$error.required">Campo Requerido!!!</span>
+				<span ng-show="frm.subject.$dirty && frm.subject.$error.maxlength">Maximo veinte caracteres.</span>
+				<span ng-show="frm.subject.$dirty && frm.subject.$error.pattern">Solo letras y numeros :(</span>
+				<textarea ng-model="contact.description" name="description" placeholder="description" ng-pattern="wordAndNumber" required></textarea>
+				<span ng-show="frm.description.$dirty && frm.description.$error.required">Campo Requerido!!!</span>
+				<span ng-show="frm.description.$dirty && frm.description.$error.pattern">Solo letras y numeros.</span>
+				<input type="submit" value="Send" ng-disabled="frm.$invalid">
+			</form>
+			<div class="table">
+				<div ng-repeat="user in users">
+					<div>{{user.user}}</div>
+					<div>{{user.email}}</div>
+					<div>{{user.subject}}</div>
+					<div>{{user.description}}</div>
+				</div>
+			</div>
+		</section>
+
+		<footer>
+			<div class="foot">
+				© 2016 Abel HZO
+			</div>
+		</footer>
+		
+	</body>
+</html>
